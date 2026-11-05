@@ -13,22 +13,23 @@ omgångar = int(input("Hur många omgångar vill du spela? "))
 
 
 print(f"Vi ska spela {omgångar} omgångar, lycka till {namn}!")
-val = input("Välj mellan sten, sax eller påse: ")
-print(f"du valde {val}")
 
 score = 0
-if val == computer_val:
-    print("Det blev oavgjort!")
-elif val == "sten" and computer_val == "sax":
-     score = score + 1
-elif val == "sax" and computer_val == "påse":
-     score = score + 1
-elif val == "påse" and computer_val == "sten":
+
+for i in range(omgångar):
+    val = input("Välj mellan sten, sax eller påse: ")
+    print(f"du valde {val}")
+    print(f"omgång {i + 1} av {omgångar}")
+    if val == computer_val:
+        print("Det blev oavgjort!")
+    elif val == "sten" and computer_val == "sax":
         score = score + 1
-else:
-    print(f"Du förlorade! Datorn valde {computer_val}")
+    elif val == "sax" and computer_val == "påse":
+        score = score + 1
+    elif val == "påse" and computer_val == "sten":
+            score = score + 1
+    else:
+        print(f"Du förlorade! Datorn valde {computer_val}")
 
+    print(f"Poäng: {score}")
 
-
-
-    
